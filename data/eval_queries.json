@@ -1,0 +1,25 @@
+{
+  "name": "lumen-docs-sample",
+  "queries": [
+    {"query_id": "q01", "query": "How do I install Lumen on a Linux server?", "relevant_headers": ["Installing on Linux"], "source_doc": "vector-store-operations.md"},
+    {"query_id": "q02", "query": "Which port does the Docker container expose and where should I mount the volume?", "relevant_headers": ["Running with Docker"]},
+    {"query_id": "q03", "query": "What does the m parameter of the HNSW graph control?", "relevant_headers": ["Index Parameters"]},
+    {"query_id": "q04", "query": "Why is the first search slow after the node ran low on RAM?", "relevant_headers": ["Memory Limits", "High Query Latency"]},
+    {"query_id": "q05", "query": "take a point-in-time backup of a collection without stopping writes", "relevant_headers": ["Snapshots"]},
+    {"query_id": "q06", "query": "Queries return 503 while bringing back data from a backup", "relevant_headers": ["Restoring a Collection"]},
+    {"query_id": "q07", "query": "process killed by the kernel, how to reduce memory usage", "relevant_headers": ["Out of Memory Errors"]},
+    {"query_id": "q08", "query": "How do I pass my credentials when calling the API?", "relevant_headers": ["Authentication > API Keys"]},
+    {"query_id": "q09", "query": "replace credentials without any downtime", "relevant_headers": ["Key Rotation"]},
+    {"query_id": "q10", "query": "What happens when I send too many requests per second?", "relevant_headers": ["Rate Limiting"]},
+    {"query_id": "q11", "query": "fetch the next page of results with a cursor", "relevant_headers": ["Pagination"]},
+    {"query_id": "q12", "query": "error 409 dimension_mismatch", "relevant_headers": ["Errors"]},
+    {"query_id": "q13", "query": "How can I check that a webhook payload really came from Lumen?", "relevant_headers": ["Verifying Signatures"]},
+    {"query_id": "q14", "query": "Why should Lumen run as a StatefulSet rather than a Deployment?", "relevant_headers": ["Helm Chart"]},
+    {"query_id": "q15", "query": "automatically add replicas when CPU usage is high", "relevant_headers": ["Autoscaling"]},
+    {"query_id": "q16", "query": "pod receives traffic before shards are loaded", "relevant_headers": ["Health Checks"]},
+    {"query_id": "q17", "query": "Which Prometheus series measures search latency?", "relevant_headers": ["Observability > Metrics"]},
+    {"query_id": "q18", "query": "roll out a new version to one canary pod first", "relevant_headers": ["Upgrades"]},
+    {"query_id": "q19", "query": "restrict nearest neighbour results by metadata", "relevant_headers": ["Search Endpoint"]},
+    {"query_id": "q20", "query": "enable verbose debug output to investigate slow queries", "relevant_headers": ["Logging", "High Query Latency"]}
+  ]
+}

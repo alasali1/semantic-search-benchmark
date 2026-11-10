@@ -1,0 +1,48 @@
+[project]
+name = "semantic-search-benchmarker"
+version = "0.1.0"
+description = "Benchmark BM25 vs. dense retrieval across Markdown chunking strategies"
+readme = "README.md"
+authors = [
+    { name = "alasali1", email = "alasali96@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "chromadb>=1.5.9",
+    "fastapi>=0.162.0",
+    "numpy>=2.4.6",
+    "openai>=3.42.1",
+    "pandas>=3.1.0",
+    "pydantic>=2.14.2",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+    "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=6.2.0",
+    "streamlit>=1.66.1",
+    "tiktoken>=0.14.0",
+    "torch>=2.15.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+semantic-search-benchmarker = "semantic_search_benchmarker:main"
+semantic-search-dashboard = "semantic_search_benchmarker:dashboard"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
+
+# On Linux (i.e. inside Docker) pull the CPU-only PyTorch build instead of the default
+# CUDA one, which drags in several GB of nvidia-* wheels. Windows/macOS are unaffected.
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

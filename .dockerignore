@@ -1,0 +1,32 @@
+# VCS / editor
+.git
+.gitignore
+.vscode
+.idea
+
+# Python artifacts
+**/__pycache__
+**/*.py[oc]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+build
+dist
+wheels
+
+# Local environments & secrets (pass .env at runtime instead)
+.venv
+.env
+.env.*
+
+# Generated output
+results
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+compose.yaml
+
+# Misc
+ai_prompt_log.md

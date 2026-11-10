@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    build: .
+    image: semantic-search-benchmarker
+    ports:
+      - "8501:8501"
+    env_file:
+      - path: .env
+        required: false   # only needed for --backend openai
+    volumes:
+      - ./data:/app/data:ro   # edit docs/queries on the host; indexes rebuild automatically
+
+  benchmark:
+    image: semantic-search-benchmarker
+    profiles: ["cli"]        # not started by `docker compose up`
+    command: ["semantic-search-benchmarker"]
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./data:/app/data:ro
+      - ./results:/app/results
